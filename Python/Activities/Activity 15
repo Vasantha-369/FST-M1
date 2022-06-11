@@ -1,0 +1,4 @@
+try:
+    print(text)
+except NameError:
+    print("text hasn't been defined yet.")

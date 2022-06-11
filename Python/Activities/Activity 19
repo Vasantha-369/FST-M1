@@ -1,0 +1,24 @@
+# Import pandas
+import pandas
+from pandas import ExcelWriter
+
+# Create a dictionary that will be used to create the DataFrame
+data = {
+	'FirstName':["Leonard", "Sheldon", "Rajesh", "Howard"],
+	'LastName':["Hoftstarder", "Cooper", "Koothrapalai", "Wolowitz"],
+	'Email':["leonard@example.com", "sheldon@example.com", "rajesh@example.com", "howard@example.com"],
+	'PhoneNumber':["4537829158", "4892184058", "4528727830","4378126734"]
+}
+
+# Create the DataFrame that will be written to the excel file
+dataframe = pandas.DataFrame(data)
+
+# Print the dataframe
+print(dataframe)
+
+# Write the dataframe to a Excel file
+writer = ExcelWriter('sample.xlsx')
+dataframe.to_excel(writer, 'Sheet1', index = False)
+
+# Commit data to the Excel file
+writer.save()
